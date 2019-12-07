@@ -1,6 +1,5 @@
 package com.example.cartabaraja
 
-import androidx.annotation.ArrayRes
 import java.lang.Exception
 import kotlin.random.Random
 
@@ -103,4 +102,34 @@ class Baraja {
         this.listaCartas.removeAt(0)
         return carta
     }
+
+    fun insertaCartaFinal(idCarta:Int){
+
+        var carta: Carta = Carta(idCarta)
+        this.listaCartas.add(carta)
+    }
+
+    fun insertaCartaPrincipio(idCarta:Int){
+        var carta: Carta = Carta(idCarta)
+        this.listaCartas.add(0,carta)
+    }
+
+    fun insertaCartaFinal(carta:Carta){
+        this.listaCartas.add(carta)
+    }
+
+    fun insertaCartaPrincipio(carta: Carta){
+        this.listaCartas.add(0,carta)
+    }
+
+    fun numeroCartas():Int{
+        return listaCartas.size
+    }
+
+    fun vacia():Boolean{
+        var result = false
+        if(this.listaCartas.size == 0) result = true
+        return result
+    }
+
 }
