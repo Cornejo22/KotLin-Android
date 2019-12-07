@@ -5,8 +5,8 @@ import java.lang.Exception
 class Carta{
 
     //Atributos
-    var numero:Int = 0
-    var palo:Int = 0
+     var numero:Int  = 0
+     var palo:Int = 0
 
     //Constructor
     constructor(numero:Int, palo:Int){

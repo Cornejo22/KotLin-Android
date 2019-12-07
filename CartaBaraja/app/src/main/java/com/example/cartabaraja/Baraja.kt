@@ -30,31 +30,29 @@ class Baraja {
     }
 
     fun recorrer(){
-        var i:Int = 0
-        for (i in this.listaCartas){
-            println(i.nombreCarta())
+        for (value in this.listaCartas){
+            println(value.nombreCarta())
         }
     }
 
-    fun crearBaraja(tipoBaraja: Int):ArrayList<Carta>{
+    private fun crearBaraja(tipoBaraja: Int):ArrayList<Carta>{
       var listaDeCartas:ArrayList<Carta> = ArrayList()
 
         if(tipoBaraja == 1){
             for (i in 1..40){
                 var carta = Carta(i)
-                println(carta.nombreCarta())
-                this.listaCartas.add(carta)
+                listaDeCartas.add(carta)
             }
         }
         else{
             if(tipoBaraja == 2){
                 for (i in 1..40){
                     var carta = Carta(i)
-                    this.listaCartas.add(carta)
+                    listaDeCartas.add(carta)
                 }
                 for (i in 1..40){
                     var carta = Carta(i)
-                    this.listaCartas.add(carta)
+                    listaDeCartas.add(carta)
                 }
             }
             else{
@@ -65,14 +63,44 @@ class Baraja {
       return listaDeCartas
     }
 
-    fun barajamos(){
+    private fun barajamos(){
         var listTemporal:ArrayList<Carta> = ArrayList()
         var random:Random = Random
         var pos:Int
 
         while (this.listaCartas.size > 0){
             pos = random.nextInt(this.listaCartas.size)
-            listTemporal.add(this.listaCartas.get(pos))
+            listTemporal.add(this.listaCartas[pos])
+            this.listaCartas.removeAt(pos)
         }
+
+        this.listaCartas.addAll(listTemporal)
+    }
+
+    fun cortar(pos:Int ){
+        var listaTemporal: ArrayList<Carta> = ArrayList()
+
+        if(pos > this.listaCartas.size || pos < 0){
+            throw Exception("La posición para dividir la baraja es incorrecta")
+        }
+        else{
+            var i:Int = pos
+
+            while (i <= this.listaCartas.size-1){
+                listaTemporal.add(this.listaCartas[i])
+                i++
+            }
+            this.listaCartas.subList(pos, this.listaCartas.size).clear()
+
+            this.listaCartas.addAll(0,listaTemporal)
+        }
+
+
+    }
+
+    fun robar():Carta{
+        val carta:Carta = Carta(this.listaCartas[0].numero,this.listaCartas[0].palo)
+        this.listaCartas.removeAt(0)
+        return carta
     }
 }
