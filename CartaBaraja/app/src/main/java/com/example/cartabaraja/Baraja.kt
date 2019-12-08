@@ -3,7 +3,7 @@ package com.example.cartabaraja
 import java.lang.Exception
 import kotlin.random.Random
 
-class Baraja {
+class Baraja{
 
     //Atributos
     private var listaCartas: ArrayList<Carta>
@@ -16,7 +16,6 @@ class Baraja {
     constructor(tipoBaraja: Int){
         this.listaCartas = ArrayList()
         this.listaCartas = crearBaraja(tipoBaraja)
-
     }
 
     constructor(tipoBaraja: Int,barajar:Boolean){
