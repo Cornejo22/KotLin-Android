@@ -1,8 +1,12 @@
 package com.example.alumnogrupo
 
 fun main(args: Array<String>){
-    var alumno:Alumno =
-        Alumno("Miguel",
+    val alumno = Alumno("Miguel",
         23,6.5)
-    alumno.imprimir()
+
+    val grupo = Grupo()
+    grupo.insertaAlumnoLista(alumno)
+    grupo.insertaAlumnoLista("Luna",22,6.0)
+    grupo.escribeFicheroTxt("hello2")
+    grupo.leeFicheroTXT("hello2")
 }

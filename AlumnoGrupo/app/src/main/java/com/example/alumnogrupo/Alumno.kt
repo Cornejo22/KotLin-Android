@@ -8,27 +8,27 @@ class Alumno (
     private var a_calificacion: Double
     )
 {
-    private var nombre:String
-    private var edad:Int = 0
-    private var calificacion:Double = 0.0
+//    private var nombre:String = ""
+//    private var edad:Int = 0
+//    private var calificacion:Double = 0.0
 
     init {
         if(a_nombre.isNotEmpty()){
-            this.nombre = a_nombre
+            this.a_nombre = a_nombre
         }
         else{
             throw Exception("Error en el nombre del Alumno")
         }
 
         if(a_edad in 18..99){
-            this.edad = a_edad
+            this.a_edad = a_edad
         }
         else{
             throw Exception("Error en la edad del Alumno")
         }
 
         if(a_calificacion in 0.0..10.0){
-            this.calificacion = a_calificacion
+            this.a_calificacion = a_calificacion
         }
         else{
             throw Exception("Error en la calificación del Alumno")
@@ -36,8 +36,11 @@ class Alumno (
 
     }
 
-    fun imprimir(){
-       print("Nombre: "+ this.nombre + "\nEdad: " + this.edad + "\nCalificación: " + this.calificacion)
+    fun imprimir():String {
+        var result: String
+        result = "Nombre: "+ this.a_nombre + "\nEdad: " + this.a_edad + "\nCalificación: " +
+               this.a_calificacion + "\n"
+        return result
     }
 }
 
