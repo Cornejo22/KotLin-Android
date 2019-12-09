@@ -6,7 +6,13 @@ fun main(args: Array<String>){
 
     val grupo = Grupo()
     grupo.insertaAlumnoLista(alumno)
-    grupo.insertaAlumnoLista("Luna",22,6.0)
-    grupo.escribeFicheroTxt("hello2")
-    grupo.leeFicheroTXT("hello2")
+    grupo.escribeFicheroBin("ficheroBin")
+    grupo.leeFicheroBin("ficheroBin")
+    println(grupo.toString())
+    grupo.escribeFicheroTxt("ficheroTxt")
+    grupo.leeFicheroTxt("ficheroTxt")
+    println(grupo.toString())
+    grupo.escribeFicheroCsv("ficheroCsv")
+    grupo.leeFicheroCsv("ficheroCsv")
+    println(grupo.toString())
 }

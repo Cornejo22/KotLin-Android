@@ -2,10 +2,10 @@ package com.example.alumnogrupo
 
 import java.lang.Exception
 
-class Alumno (
-    private var a_nombre: String,
-    private var a_edad: Int,
-    private var a_calificacion: Double
+class Alumno(
+    var a_nombre: String,
+    var a_edad: Int,
+    var a_calificacion: Double
     )
 {
 //    private var nombre:String = ""
@@ -37,10 +37,8 @@ class Alumno (
     }
 
     fun imprimir():String {
-        var result: String
-        result = "Nombre: "+ this.a_nombre + "\nEdad: " + this.a_edad + "\nCalificación: " +
-               this.a_calificacion + "\n"
-        return result
+        return "Nombre: "+ a_nombre + "\nEdad: " + a_edad + "\nCalificación: " +
+                a_calificacion
     }
 }
 
